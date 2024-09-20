@@ -1,38 +1,186 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  margin: 10px;
+  display: grid;
+  grid-template-areas:
+    "about"
+    "content";
+  grid-template-rows: auto 1fr;
   min-height: 100vh;
+}
+
+.about-properties h1 {
+  font-size: 4rem;
+  font-weight: 750;
+  line-height: 10px;
+}
+
+.about-properties p {
+  line-height: 5px;
+}
+
+.content-wrapper {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.status-update {
+  padding: 1rem;
+}
+
+.hina-mincho-regular {
+  font-family: "Hina Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inconsolata-font {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.rosarivo-regular {
+  font-family: "Rosarivo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rosarivo-regular-italic {
+  font-family: "Rosarivo", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.playfair-display-font {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+body {
+  background: linear-gradient(to bottom right, #eeeeee, #ffecd5);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.project-card {
+  max-width: 300px;
+  max-height: 300px;
+  background: #ffffff76;
+  text-align: left;
+  text-wrap: wrap;
+  padding: 1rem;
+  border: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  font-family: 'Inconsolata';
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-properties {
+  text-align: left;
+}
+
+.scrobbles-card {
+  padding: 0.8rem;
+  background-color: #ffffff76;
+  border: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.scrobbles-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scrobbles-card p{
+  font-size: 10;
+  font-family: 'Inconsolata';
+  display: flex;
+  align-items: left;
+  margin: 0.2rem;
+}
+
+.scrobble-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.scrobble-item:last-child {
+  margin-bottom: 0;
+}
+
+.scrobble-item img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 1rem;
+  border-radius: 2px;
+}
+
+.scrobble-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.scrobble-details h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scrobble-details p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: rotate(-10deg) scale(1.2);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.title-style{
+  font-size: 15pt;
+  margin-bottom: 5px;
 }
