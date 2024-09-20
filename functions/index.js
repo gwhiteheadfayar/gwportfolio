@@ -2,7 +2,7 @@ const functions = require('firebase-functions');
 const axios = require('axios');
 const cors = require('cors')({ origin: true });
 
-const LASTFM_API_KEY = process.env.LASTFM_API_KEY;
+const LASTFM_API_KEY = process.env.REACT_APP_LASTFM_API_KEY;
 const LASTFM_USER = 'garrettwlastfm';
 
 exports.getLastFmScrobbles = functions.https.onRequest(async (request, response) => {
